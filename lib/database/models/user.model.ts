@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     email: {type: String, required: true, unique: true},
     username: {type: String, required: true, unique: true},
     firstName: {type: String, required: true},
-    lastName: {type: String, required: true}, //remember to make this required false
+    lastName: {type: String}, //remember to make this required false
     photo: {type: String, required: true},
 })
 
