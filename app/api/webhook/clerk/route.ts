@@ -1,7 +1,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
-import { createUser, updateUser, deleteUser } from '@/lib/actions/user.actions'
+import { createUser, deleteUser, updateUser } from '@/lib/actions/user.actions'
 import { clerkClient } from '@clerk/nextjs'
 import { NextResponse } from 'next/server'
  
@@ -49,40 +49,35 @@ export async function POST(req: Request) {
       status: 400
     })
   }
-
-  // Important part here 
  
   // Get the ID and type
   const { id } = evt.data;
   const eventType = evt.type;
-
-
-  //For user.created event
+ 
   if(eventType === 'user.created') {
-    const {id, email_addresses, image_url, first_name, last_name, username} = evt.data;
+    const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
 
     const user = {
-        clerkId: id,
-        email: email_addresses[0].email_address,
-        username: username!, //username can sometimes be null
-        firstName: first_name,
-        lastName: last_name,
-        photo: image_url,
+      clerkId: id,
+      email: email_addresses[0].email_address,
+      username: username!,
+      firstName: first_name,
+      lastName: last_name,
+      photo: image_url,
     }
 
-    const newUser = await createUser(user); //server action
+    const newUser = await createUser(user);
 
     if(newUser) {
-        await clerkClient.users.updateUserMetadata(id, {
-            publicMetadata: {
-                userId: newUser._id,
-            }
-        })
+      await clerkClient.users.updateUserMetadata(id, {
+        publicMetadata: {
+          userId: newUser._id
+        }
+      })
     }
-    return NextResponse.json({message: 'OK', user: newUser});
+
+    return NextResponse.json({ message: 'OK', user: newUser })
   }
-
-
 
   if (eventType === 'user.updated') {
     const {id, image_url, first_name, last_name, username } = evt.data
@@ -106,9 +101,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: 'OK', user: deletedUser })
   }
-
-  console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
-  console.log('Webhook body:', body)
  
   return new Response('', { status: 200 })
 }
