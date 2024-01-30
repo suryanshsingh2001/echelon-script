@@ -1,14 +1,23 @@
-import { getEventById } from "@/lib/actions/event.actions";
+import Collection from "@/components/shared/Collection";
+import { getEventById, getRelatedEventsByCategory } from "@/lib/actions/event.actions";
 import { formatDateTime } from "@/lib/utils";
 import { SearchParamProps } from "@/types";
 import Image from "next/image";
 import React from "react";
 
-const EventDetails = async ({ params: { id } }: SearchParamProps) => {
+const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
+
+
+  const relatedEvents = await getRelatedEventsByCategory({
+    categoryId: event.category._id,
+    eventId: event._id,
+    page: searchParams?.page as string,
+  })
 
   console.log(event);
   return (
+   <> 
     <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl">
         <Image
@@ -75,6 +84,25 @@ const EventDetails = async ({ params: { id } }: SearchParamProps) => {
         </div>
       </div>
     </section>
+
+    <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
+      <h2 className="h2-bold">
+        More Events Like This 
+      </h2>
+
+      <Collection
+          data={relatedEvents?.data}
+          emptyTitle="No Events found"
+          emptyStateSubtext="No events found. Please try another search term."
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={2}
+        />
+        
+    </section>
+
+    </>
   );
 };
 

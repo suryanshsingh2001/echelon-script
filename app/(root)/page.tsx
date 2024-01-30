@@ -1,8 +1,18 @@
+import Collection from "@/components/shared/Collection";
 import { Button } from "@/components/ui/button";
+import { getAllEvents } from "@/lib/actions/event.actions";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const events = await getAllEvents({
+    query: "",
+    category: "",
+    page: 1,
+    limit: 6,
+  });
+
+  console.log(events);
   return (
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
@@ -16,31 +26,40 @@ export default function Home() {
               companies within our global community. Book and elevate your
               learning journey with us.
             </p>
-            <Button size='lg' asChild className="button w-full sm:w-fit">  
-              <Link href="#events">
-                Explore Now
-              </Link>
+            <Button size="lg" asChild className="button w-full sm:w-fit">
+              <Link href="#events">Explore Now</Link>
             </Button>
           </div>
 
-          <Image 
-          src='/assets/images/hero.png'
-          alt="hero"
-          width={1000}
-          height={1000}
-          className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
+          <Image
+            src="/assets/images/hero.png"
+            alt="hero"
+            width={1000}
+            height={1000}
+            className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
           />
         </div>
       </section>
 
+      <section
+        id="events"
+        className="wrapper my-8 flex flex-col gap-8 md:gap-12"
+      >
+        <h2 className="h2-bold">
+          Trusted by <br /> Thousands of Events
+        </h2>
 
-      <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-        <h2 className="h2-bold">Trusted by <br /> Thousands of Events</h2>
+        <div className="">Search CategoryFilter</div>
 
-        <div className="">
-          Search
-          CategoryFilter
-        </div>
+        <Collection
+          data={events?.data}
+          emptyTitle="No Events found"
+          emptyStateSubtext="No events found. Please try another search term."
+          collectionType="All_Events"
+          limit={6}
+          page={1}
+          totalPages={2}
+        />
       </section>
     </>
   );
