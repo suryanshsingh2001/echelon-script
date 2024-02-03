@@ -2,6 +2,33 @@
 
 EchelonScript is a dynamic web application designed to seamlessly connect and empower a thriving community of developers. Whether you're hosting, creating, or joining events or echelons, EchelonScript provides a rich and collaborative environment.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><b>Home Page</b></td>
+    <td align="center"><b>Create Echelon Page</b></td>
+    <td align="center"><b>Profile Page</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/suryanshsingh2001/echelon-script/blob/master/screenshots/home.png" alt="Home Page" width="300"></td>
+    <td align="center"><img src="https://github.com/suryanshsingh2001/echelon-script/blob/master/screenshots/create.png" alt="Create Echelon Page" width="300"></td>
+    <td align="center"><img src="https://github.com/suryanshsingh2001/echelon-script/blob/master/screenshots/profile.png" alt="Profile Page" width="300"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Echelon Details</b></td>
+    <td align="center"><b>Orders Page</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://github.com/suryanshsingh2001/echelon-script/blob/master/screenshots/echelon.png" alt="Echelon Details" width="300"></td>
+    <td align="center"><img src="https://github.com/suryanshsingh2001/echelon-script/blob/master/screenshots/orders.png" alt="Orders Page" width="300"></td>
+  </tr>
+</table>
+
+
+
+
+
 ## Key Features 🌟
 
 ### 1. User Dashboard 🧑‍💻
@@ -26,6 +53,7 @@ EchelonScript leverages a cutting-edge tech stack to ensure a delightful user ex
 
 - **Frontend Magic:** Next.js with TypeScript, Tailwind CSS, Shadcnui
 - **Seamless File Uploads:** Uploadthing
+- **Form and Validation:** React Hook Forms with Zod
 - **Secure Payments:** Stripe
 - **Slick Authentication and Dashboard:** Clerk
 - **Robust Database:** MongoDB
