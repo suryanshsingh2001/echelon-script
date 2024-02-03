@@ -47,7 +47,7 @@ EchelonScript seamlessly integrates with Stripe for secure and efficient payment
 EchelonScript integrates powerful server actions to enhance functionality and performance. These actions ensure secure and efficient handling of critical operations, contributing to a smooth user experience.
 
 ## Getting Started 🚀
-To get started with EchelonScript on your local machine, checkout our [Getting Started Guide]()
+To get started with EchelonScript on your local machine, checkout our [Installation Guide](https://github.com/suryanshsingh2001/echelon-script/blob/master/GetStarted.md)
 
 ## Future Features (In Progress) 🚧
 
