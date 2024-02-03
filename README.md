@@ -8,6 +8,11 @@ EchelonScript is a dynamic web application designed to seamlessly connect and em
 
 Experience a comprehensive User Dashboard with full user management powered by Clerk. Effortlessly manage profiles, explore order history, and receive tailored recommendations for a user-centric experience.
 
+- **Complete User Profiles:** Users can create and manage detailed profiles, enhancing community engagement.
+- **Dashboard Overview:** A central hub for users to view and manage events, orders, and personal settings.
+- **Order History:** Track and revisit past event orders with ease.
+- **Social Sign-In:** Sign in conveniently using your Google or GitHub account directly from the User Dashboard.
+
 ### 2. Event/Echelon Management 🎉
 
 - **Host Your Vision:** Easily host your own events or join exciting echelons crafted by fellow developers.
@@ -15,13 +20,7 @@ Experience a comprehensive User Dashboard with full user management powered by C
 - **Smart Event Exploration:** Discover related events based on categories or from the same organizer, fostering a sense of community.
 - **Efficient Search:** Utilize a powerful search bar, category dropdown, and pagination for quick and precise event discovery.
 
-### 3. Full User Management with Dashboard 🚀
-
-- **Complete User Profiles:** Users can create and manage detailed profiles, enhancing community engagement.
-- **Dashboard Overview:** A central hub for users to view and manage events, orders, and personal settings.
-- **Order History:** Track and revisit past event orders with ease.
-
-### 4. Tech Stack ⚙️
+### 3. Tech Stack ⚙️
 
 EchelonScript leverages a cutting-edge tech stack to ensure a delightful user experience:
 
@@ -33,13 +32,22 @@ EchelonScript leverages a cutting-edge tech stack to ensure a delightful user ex
 - **Efficient Backend:** Express.js, Node.js
 - **Effortless Server Deployment:** Vercel
 
+### 4. Stripe Integration 💳
+
+EchelonScript seamlessly integrates with Stripe for secure and efficient payment processing. Users can enjoy a smooth checkout experience, making hosting and attending events a breeze.
+
+#### Simulation Details for Stripe Purchase
+
+- **Card Number:** 4000 0035 6000 0008
+- **Expiration Date:** Any future date
+- **CVC:** Any three-digit number
+
 ### 5. Server Actions 🚄
 
 EchelonScript integrates powerful server actions to enhance functionality and performance. These actions ensure secure and efficient handling of critical operations, contributing to a smooth user experience.
 
-### 6. GitHub Authentication (In Progress) 🔒
-
-We are currently working on implementing GitHub authentication for a seamless login experience. Stay tuned for this exciting new feature!
+## Getting Started 🚀
+To get started with EchelonScript on your local machine, checkout our [Getting Started Guide]()
 
 ## Future Features (In Progress) 🚧
 
