@@ -10,11 +10,11 @@ const Header = () => {
   return (
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">
-        <Link href="/" className="w-36">
+        <Link href="/" className="w-40">
           <Image
-            src="/assets/images/logo.svg"
+            src="/assets/images/logo-no-background.svg"
             alt="EchelonScript"
-            width={128}
+            width={300}
             height={38}
           />
         </Link>

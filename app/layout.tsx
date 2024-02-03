@@ -12,9 +12,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "EchelonScript",
-  description: "Empowering developers at every level.",
+  description: "Empowering Devs, Hosting Dreams",
   icons: {
-    icon: "/assets/images/logo.svg",
+    icon: "/assets/images/echelonscript-high-resolution-logo.png",
   },
 };
 
