@@ -89,7 +89,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
     <section className="wrapper my-8 flex flex-col gap-8 md:gap-12">
       <h2 className="h2-bold">
-        More Events Like This 
+        More Echelons Like This 
       </h2>
 
       <Collection
