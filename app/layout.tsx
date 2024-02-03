@@ -16,22 +16,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/images/echelonscript-high-resolution-logo.png",
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://echelonscript.com",
-    siteName: "EchelonScript",
-    title: "EchelonScript",
-    description: "Empowering Devs, Hosting Dreams",
-    images: [
-      {
-        url: "/assets/images/echelonscript-high-resolution-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "EchelonScript",
-      },
-    ],
-  }
 };
 
 export default function RootLayout({
